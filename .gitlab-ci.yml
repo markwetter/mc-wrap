@@ -1,0 +1,17 @@
+image: rust:1.26
+
+stages:
+  - build
+
+# Avoid rebuilding deps if we don't need to
+cache:
+  paths:
+  - ~/.cargo/
+  - target/
+
+build:
+  stage: build
+  script: cargo build --release
+  artifacts:
+    paths:
+    - target/release/mc-wrap
