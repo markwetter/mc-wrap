@@ -27,12 +27,12 @@ fn main() {
 
     loop {
         chan_select! {
-            signal.recv() -> _signal => {
-                println!("Shutting down Minecraft server...");
+            signal.recv() -> signal => {
+                println!("mc-wrap: Detected SIG{:?} - Shutting down Minecraft server...", signal.unwrap());
                 stdin.write(b"stop\n").unwrap();
             },
             rdone.recv() => {
-                println!("Detected Minecraft server shutdown");
+                println!("mc-wrap: Detected Minecraft server shutdown");
                 break;
             }
         }
