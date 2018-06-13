@@ -11,7 +11,9 @@ cache:
 
 build:
   stage: build
-  script: cargo build --release
+  script:
+  - cargo build --release
+  - strip target/release/mc-wrap
   artifacts:
     paths:
     - target/release/mc-wrap
