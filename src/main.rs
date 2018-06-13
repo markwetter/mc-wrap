@@ -15,7 +15,7 @@ use os_pipe::{pipe, IntoStdio};
 
 fn main() {
     if env::args().count() < 2 {
-        eprintln!("At least one argument required (try ./mc-oxidize java -jar server.jar)");
+        eprintln!("At least one argument required (try ./mc-wrap java -jar server.jar)");
         std::process::exit(1);
     }
 
