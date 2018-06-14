@@ -3,10 +3,13 @@ image: rust:1.26-slim
 stages:
   - build
 
+variables:
+  CARGO_HOME: "${CI_PROJECT_DIR}/.cargo"
+
 # Avoid rebuilding deps if we don't need to
 cache:
   paths:
-  - ~/.cargo/
+  - .cargo/
   - target/
 
 build:
