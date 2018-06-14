@@ -12,12 +12,13 @@ cache:
   - .cargo/
   - target/
 
-build:
+mc-wrap:
   stage: build
   script:
   - cargo build --release
   - strip target/release/mc-wrap
   - mv target/release/mc-wrap ./
   artifacts:
+    name: mc-wrap
     paths:
     - mc-wrap
