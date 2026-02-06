@@ -1,3 +1,5 @@
+Mirrored from https://gitlab.com/markwetter/mc-wrap
+
 # mc-wrap
 
 A lightweight wrapper for Minecraft Server running in Docker. Intercepts SIGINT signals from the environment and sends a graceful shutdown command to the child server process.
